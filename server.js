@@ -14,6 +14,7 @@ if (!process.env.DATABASE_URL) {
 }
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Stripe webhook route with raw body parser for signature verification
 app.use('/webhook/stripe', require('./routes/stripe'));
